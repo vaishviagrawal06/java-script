@@ -13,13 +13,22 @@
 // // localStorage.removeItem("user")
 
 let h2 = document.querySelector("h2")
+let h1 = document.querySelector("h1")
+let btn = document.querySelector("button")
+console.log(btn,"btnn");
+btn.addEventListener("click",(e)=>{
+   console.log("hjeheheh");
+   
+         localStorage.removeItem("data")
+})
+
 let data = JSON.parse(localStorage.getItem("data"))
 console.log(data, "data")
 
 if (data) {
     h2.innerText = data.name
-    // h2.innerText = data.email,
-    // h2.innerText = data.password;
+    h1.innerText = data.email
+    // h2.innerText = data.password
 }
 
 let form = document.querySelector("#formData")
@@ -38,24 +47,24 @@ form.addEventListener("submit", (e) => {
 
     localStorage.setItem('data', JSON.stringify(userData))
 
-    let loginF = document.querySelector('#loginData')
-    loginF.addEventListener("submit", (e) => {
-        e.preventDefault()
+    // let loginF = document.querySelector('#loginData')
+    // loginF.addEventListener("submit", (e) => {
+    //     e.preventDefault()
 
-        let logSaveData = JSON.parse(localStorage.getItem("data"))
-        console.log(logSaveData);
+    //     let logSaveData = JSON.parse(localStorage.getItem("data"))
+    //     console.log(logSaveData);
 
-        let loginInputD = {
-            email: loginF[0].value,
-            password: loginF[1].value,
-        }
+    //     let loginInputD = {
+    //         email: loginF[0].value,
+    //         password: loginF[1].value,
+    //     }
 
-        if (loginInputD.email === logSaveData.email && loginInputD.password === logSaveData.password)
-            alert("badhai hooo!🎉🎉")
-        else {
-            alert("tumse naa ho paayega!🥱🥱")
-        }
-    })
+    //     if (loginInputD.email === logSaveData.email && loginInputD.password === logSaveData.password)
+    //         alert("badhai hooo!🎉🎉")
+    //     else {
+    //         alert("tumse naa ho paayega!🥱🥱")
+    //     }
+    // })
 
 })
 
