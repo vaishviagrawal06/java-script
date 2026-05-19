@@ -28,7 +28,7 @@ console.log(data, "data")
 if (data) {
     h2.innerText = data.name
     h1.innerText = data.email
-    // h2.innerText = data.password
+    h2.innerText = data.password
 }
 
 let form = document.querySelector("#formData")
